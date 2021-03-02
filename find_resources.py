@@ -4,8 +4,10 @@
 # Output
 # produce - how much
 
-import spacy
-spacy.load('en_core_web_sm')
+#steps to install module
+#pip3 install spacy
+#python3 -m spacy download en
+
 from spacy.lang.en import English
 
 parser = English()
