@@ -7,10 +7,8 @@
 #steps to install module
 #pip3 install spacy
 #python3 -m spacy download en
+import spacy
 
-from spacy.lang.en import English
-
-parser = English()
 example = '''
 2 tablespoons olive oil
 8 bone-in, skin-on chicken thighs
@@ -23,7 +21,15 @@ example = '''
 salt and freshly ground black pepper to taste
 '''
 
-# Code "borrowed" from somewhere?!
+nlp = spacy.load('en_core_web_sm')
+doc = nlp(example)
+for ent in doc.ents:
+    print(ent.text, ent.label_)
+
+from spacy.lang.en import English
+
+parser = English()
+
 def entities(example, show=False):
     if show: print(example)
     parsedEx = parser(example)
