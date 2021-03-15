@@ -23,7 +23,28 @@ label3 = Label(window, text = "Result: ").grid(row = 5, column = 1, sticky = W)
 lblresult = Entry(window, justify=RIGHT)
 lblresult.grid(row=5, column=2, sticky=E)
 
-btresult = Button(window, text="Compute Sum", command=result(number1Var.get(), number2Var.get()))
+btresult = Button(window, text="Compute Sum", command=lambda: result(number1Var.get(), number2Var.get()))
 btresult.grid(row=6, column=2, sticky=E)
 
 window.mainloop()
+
+"""
+
+import tkinter as tk
+
+def createNewWindow():
+    newWindow = tk.Toplevel(app)
+    labelExample = tk.Label(newWindow, text = "New Window")
+    buttonExample = tk.Button(newWindow, text = "New Window button")
+
+    labelExample.pack()
+    buttonExample.pack()
+
+app = tk.Tk()
+buttonExample = tk.Button(app,
+              text="Create new window",
+              command=createNewWindow)
+buttonExample.pack()
+
+app.mainloop()
+"""
